@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
-Name=Capture Card
+Name=OwlCap
 Comment=Low-latency preview for HDMI capture cards (video and audio)
-Exec=capture-card
+Exec=owlcap
 Icon=video-display
 Terminal=false
 Categories=AudioVideo;Video;Player;
 Keywords=capture;hdmi;switch;video;
-StartupWMClass=capture-card
+StartupWMClass=owlcap
 StartupNotify=true

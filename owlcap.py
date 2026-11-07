@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Capture Card – a small low-latency player for HDMI capture cards.
+OwlCap – a small low-latency player for HDMI capture cards.
 
 Video AND audio run in ONE program (GStreamer). That way the audio belongs
 to the same process as the window, and the official Discord client includes
-it when you share the "Capture Card" window.
+it when you share the "OwlCap" window.
 
 Controls:
   F11 / double-click  toggle fullscreen     Esc    leave fullscreen
@@ -26,8 +26,8 @@ from gi.repository import Gdk, GLib, Gst, Gtk  # noqa: E402
 
 Gst.init(None)
 
-APP_NAME = "Capture Card"
-CONFIG = Path.home() / ".config" / "capture-card.json"
+APP_NAME = "OwlCap"
+CONFIG = Path.home() / ".config" / "owlcap.json"
 
 # display name -> (width, height, fps, card format)
 MODES = {
@@ -112,7 +112,7 @@ def load_config():
 # ---------------------------------------------------------------- Video sink
 def make_video_sink():
     """GL-accelerated GTK sink, else software sink. Returns (sink, widget)."""
-    if not os.environ.get("CAPTURE_NO_GL"):
+    if not os.environ.get("OWLCAP_NO_GL"):
         gl = Gst.ElementFactory.make("gtkglsink", None)
         bin_ = Gst.ElementFactory.make("glsinkbin", None)
         if gl and bin_:
@@ -481,7 +481,7 @@ class Player(Gtk.Window):
 
 
 if __name__ == "__main__":
-    GLib.set_prgname("capture-card")
+    GLib.set_prgname("owlcap")
     GLib.set_application_name(APP_NAME)
     Player()
     Gtk.main()

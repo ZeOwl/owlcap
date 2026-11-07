@@ -1,4 +1,4 @@
-# Capture Card
+# OwlCap
 
 A small low-latency player for USB HDMI capture cards on Linux, made for
 playing consoles (e.g. a Nintendo Switch) on your PC and streaming them to
@@ -6,7 +6,7 @@ Discord with sound.
 
 Video **and** audio run in a single GTK/GStreamer program. Because the audio
 belongs to the same process as the window, the official Discord client sends
-it along when you share the **Capture Card** window.
+it along when you share the **OwlCap** window.
 
 ## Features
 
@@ -46,15 +46,15 @@ sudo dnf install python3-gobject gtk3 gstreamer1-plugins-base gstreamer1-plugins
 ### 2. Install
 
 ```sh
-git clone https://github.com/ZeOwl/capture-card.git
-cd capture-card
+git clone https://github.com/ZeOwl/owlcap.git
+cd owlcap
 ./install.sh
 ```
 
-This links `capture-card` into `~/.local/bin` and adds **Capture Card** to your
+This links `owlcap` into `~/.local/bin` and adds **OwlCap** to your
 app menu. Nothing is installed system-wide. `./uninstall.sh` removes it again.
 
-You can also run it without installing: `./capture-card.py`
+You can also run it without installing: `./owlcap.py`
 
 ## Usage
 
@@ -71,7 +71,7 @@ You can also run it without installing: `./capture-card.py`
 
 ### Streaming to Discord
 
-In Discord, share the **Capture Card** window (not the whole screen). The audio
+In Discord, share the **OwlCap** window (not the whole screen). The audio
 is included automatically.
 
 ## Troubleshooting
@@ -80,14 +80,20 @@ is included automatically.
   works on almost all cards), close other programs that use the card (OBS, VLC),
   or unplug and reconnect the HDMI source.
 - **Black window or crashes with the GL output:** start with
-  `CAPTURE_NO_GL=1 capture-card` to use the software renderer.
+  `OWLCAP_NO_GL=1 owlcap` to use the software renderer.
 - **Discord stream freezes when the window is resized or leaves fullscreen
   (Hyprland):** this is a bug in `xdg-desktop-portal-hyprland`
   ([#445](https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/445)).
   Set the window size or fullscreen *before* you start the stream and use the
   fullscreen HUD to change settings. If it freezes, restart the stream in Discord.
 
-Settings are stored in `~/.config/capture-card.json`.
+Settings are stored in `~/.config/owlcap.json`.
+
+## Acknowledgements
+
+Built with the help of [Claude](https://claude.com/claude-code), Anthropic's AI
+assistant, which helped with debugging, the fullscreen HUD and preparing the
+project for release.
 
 ## License
 

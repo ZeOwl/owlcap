@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Capture Card
+Comment=Low-latency preview for HDMI capture cards (video and audio)
+Exec=capture-card
+Icon=video-display
+Terminal=false
+Categories=AudioVideo;Video;Player;
+Keywords=capture;hdmi;switch;video;
+StartupWMClass=capture-card
+StartupNotify=true
